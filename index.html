@@ -3,140 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ff4438" />
-    <meta
-      name="description"
-      content="🤡.fm — 一个一本正经地拒绝一本正经的互联网角落。"
-    />
-    <meta property="og:title" content="🤡.fm · 认真暂时离线" />
-    <meta
-      property="og:description"
-      content="欢迎来到互联网的非必要快乐部门。保持好奇，允许出丑。"
-    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="🤡.fm" />
+    <meta property="og:title" content="🤡.fm" />
+    <meta property="og:description" content="🤡.fm" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://xn--9p9h.fm/" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤡</text></svg>"
     />
-    <title>.fm · 认真暂时离线</title>
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <title>🤡.fm</title>
+    <link rel="stylesheet" href="styles.css?v=6" />
   </head>
+
   <body>
-    <a class="skip-link" href="#main">跳到主要内容</a>
-    <div class="page-noise" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
+    <main class="stage">
+      <button
+        class="domain"
+        id="copy-domain"
+        type="button"
+        data-domain="🤡.fm"
+        aria-label="复制域名 🤡.fm"
+      >
+        <span class="clown" aria-hidden="true">🤡</span>
+        <span class="suffix">.fm</span>
+      </button>
 
-    <header class="site-header">
-      <a class="mini-brand" href="#main" aria-label="🤡.fm 首页">
-        <span aria-hidden="true">🤡</span><strong>.fm</strong>
-      </a>
-      <div class="status-tag">
-        <span class="status-dot"></span>
-        SERIOUSNESS: OFF
-      </div>
-    </header>
-
-    <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-index" aria-hidden="true">00 / 🤡</div>
-        <p class="eyebrow reveal">A TINY, WEIRD CORNER OF THE INTERNET</p>
-
-        <h1 id="hero-title" class="domain reveal" aria-label="小丑点 FM">
-          <span id="mascot" class="domain-emoji" aria-hidden="true">🤡</span><span>.fm</span>
-        </h1>
-
-        <p class="hero-copy reveal">
-          一个一本正经地<br class="mobile-break" />拒绝<span>一本正经</span>的地方。
-        </p>
-
-        <div class="hero-actions reveal">
-          <button class="nose-button" id="clown-switch" type="button">
-            <span class="nose" aria-hidden="true"></span>
-            <span class="nose-copy">
-              <small>DO NOT PRESS</small>
-              <strong id="switch-label">按下红鼻子</strong>
-            </span>
-          </button>
-          <button class="copy-domain" id="copy-domain" type="button" data-domain="🤡.fm">
-            <span>复制 🤡.fm</span><span aria-hidden="true">↗</span>
-          </button>
-        </div>
-
-        <p class="hero-note reveal">这里暂时没有宏大使命。<br />但域名很好记，这就够了。</p>
-
-        <svg class="doodle doodle-star" viewBox="0 0 120 120" aria-hidden="true">
-          <path d="M60 5 72 44 113 32 82 60 113 88 72 76 60 115 48 76 7 88 38 60 7 32 48 44Z" />
-        </svg>
-        <svg class="doodle doodle-loop" viewBox="0 0 180 120" aria-hidden="true">
-          <path d="M10 76c25-64 71-64 59-19-15 52 73 48 99-25" />
-        </svg>
-      </section>
-
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <div class="marquee-group">
-            <span>FOOL MODE: ON</span><i>●</i><span>认真暂时离线</span><i>✦</i><span>🤡.fm</span><i>●</i>
-          </div>
-          <div class="marquee-group">
-            <span>FOOL MODE: ON</span><i>●</i><span>认真暂时离线</span><i>✦</i><span>🤡.fm</span><i>●</i>
-          </div>
-        </div>
-      </div>
-
-      <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
-        <div class="section-heading">
-          <p>01 / 不太严肃的声明</p>
-          <h2 id="manifesto-title">欢迎来到互联网的<br /><span>非必要快乐部门。</span></h2>
-        </div>
-
-        <div class="cards">
-          <article class="card card-yellow">
-            <span>01</span>
-            <div class="card-icon" aria-hidden="true">?</div>
-            <h3>保持好奇</h3>
-            <p>答案不一定有趣，奇怪的问题通常有。</p>
-          </article>
-          <article class="card card-red">
-            <span>02</span>
-            <div class="card-icon" aria-hidden="true">!</div>
-            <h3>拒绝无聊</h3>
-            <p>生活已经够像表格了，网页就别再像了。</p>
-          </article>
-          <article class="card card-blue">
-            <span>03</span>
-            <div class="card-icon card-face" aria-hidden="true">☺</div>
-            <h3>允许出丑</h3>
-            <p>完美令人紧张，有点滑稽才像活着。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="chaos" aria-labelledby="chaos-title">
-        <div class="chaos-copy">
-          <p>02 / 今日份荒诞</p>
-          <h2 id="chaos-title">随机生成一个<br />没什么用的好主意。</h2>
-          <button id="shuffle" type="button">再胡说一次 <span aria-hidden="true">↻</span></button>
-        </div>
-        <div class="idea-machine" aria-live="polite">
-          <span>今天宜</span>
-          <p id="idea">给影子放一天假</p>
-          <small>可信度 0% · 快乐度 100%</small>
-        </div>
-      </section>
-
-      <section class="finale" aria-label="🤡.fm 域名">
-        <p>你已经抵达互联网的边缘</p>
-        <div aria-label="小丑点 FM"><span aria-hidden="true">🤡</span>.fm</div>
-        <p>请保持荒诞，然后安全返回。</p>
-      </section>
+      <div class="copy-tip" id="copy-tip" role="status" aria-live="polite"></div>
     </main>
 
-    <footer class="site-footer">
-      <p>© <span id="year">2026</span> 奶爸 <a href="https://nai.ba/">nai.ba</a></p>
-      <p>NO CLOWNS WERE HARMED</p>
+    <footer class="copyright">
+      <p>© <span id="year">2026</span> 奶爸 · <a href="https://nai.ba/">nai.ba</a></p>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>
