@@ -3,6 +3,22 @@
   --paper: #f5f5f7;
   --ink: #1d1d1f;
   --secondary: #86868b;
+  --glow-inner: rgba(255, 255, 255, 0.98);
+  --glow-middle: rgba(255, 255, 255, 0.72);
+  --glow-outer: rgba(255, 255, 255, 0);
+  --focus: rgba(29, 29, 31, 0.58);
+  --clown-shadow: rgba(29, 29, 31, 0.08);
+  --clown-shadow-hover: rgba(29, 29, 31, 0.11);
+  --suffix-top: #111113;
+  --suffix-middle: #242426;
+  --suffix-bottom: #5b5b60;
+  --suffix-shadow: rgba(29, 29, 31, 0.06);
+  --hint: rgba(29, 29, 31, 0.42);
+  --hint-hover: rgba(29, 29, 31, 0.68);
+  --tip-foreground: rgba(255, 255, 255, 0.92);
+  --tip-background: rgba(29, 29, 31, 0.82);
+  --tip-border: rgba(255, 255, 255, 0.14);
+  --rule: rgba(29, 29, 31, 0.1);
 }
 
 * {
@@ -28,6 +44,7 @@ body {
     "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: color 240ms ease, background-color 240ms ease;
 }
 
 button,
@@ -55,9 +72,9 @@ a {
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 255, 255, 0.72) 36%,
-    rgba(255, 255, 255, 0) 72%
+    var(--glow-inner) 0%,
+    var(--glow-middle) 36%,
+    var(--glow-outer) 72%
   );
   content: "";
   filter: blur(10px);
@@ -84,7 +101,7 @@ a {
 }
 
 .domain:focus-visible {
-  outline: 2px solid rgba(29, 29, 31, 0.58);
+  outline: 2px solid var(--focus);
   outline-offset: 10px;
   border-radius: 18px;
 }
@@ -95,7 +112,7 @@ a {
   font-family: sans-serif;
   font-size: clamp(5.7rem, 17vw, 17rem);
   filter: saturate(0.94) brightness(0.98)
-    drop-shadow(0 0.045em 0.11em rgba(29, 29, 31, 0.08));
+    drop-shadow(0 0.045em 0.11em var(--clown-shadow));
   transform: rotate(-3deg);
   transform-origin: 50% 62%;
   transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), filter 500ms ease;
@@ -106,9 +123,9 @@ a {
   padding-right: 0.085em;
   background: linear-gradient(
     180deg,
-    #111113 8%,
-    #242426 48%,
-    #5b5b60 100%
+    var(--suffix-top) 8%,
+    var(--suffix-middle) 48%,
+    var(--suffix-bottom) 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -116,13 +133,13 @@ a {
   font-size: clamp(6.7rem, 21vw, 21rem);
   font-weight: 750;
   letter-spacing: -0.095em;
-  text-shadow: 0 0.025em 0.13em rgba(29, 29, 31, 0.06);
+  text-shadow: 0 0.025em 0.13em var(--suffix-shadow);
 }
 
 .domain:hover .clown,
 .domain:focus-visible .clown {
   filter: saturate(1) brightness(1.02)
-    drop-shadow(0 0.055em 0.14em rgba(29, 29, 31, 0.11));
+    drop-shadow(0 0.055em 0.14em var(--clown-shadow-hover));
   transform: rotate(0deg) scale(1.015);
 }
 
@@ -137,7 +154,7 @@ a {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: rgba(29, 29, 31, 0.42);
+  color: var(--hint);
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -158,7 +175,7 @@ a {
 
 .domain:hover .copy-hint,
 .domain:focus-visible .copy-hint {
-  color: rgba(29, 29, 31, 0.68);
+  color: var(--hint-hover);
 }
 
 .domain.is-copied .copy-hint {
@@ -171,9 +188,9 @@ a {
   top: calc(50% + clamp(72px, 12.5vw, 160px));
   left: 50%;
   padding: 8px 13px;
-  color: rgba(255, 255, 255, 0.92);
-  background: rgba(29, 29, 31, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--tip-foreground);
+  background: var(--tip-background);
+  border: 1px solid var(--tip-border);
   border-radius: 999px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.32);
   backdrop-filter: blur(18px) saturate(1.2);
@@ -217,8 +234,8 @@ a {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(29, 29, 31, 0.1) 22%,
-    rgba(29, 29, 31, 0.1) 78%,
+    var(--rule) 22%,
+    var(--rule) 78%,
     transparent
   );
   content: "";
@@ -257,6 +274,31 @@ a {
   }
   100% {
     transform: rotate(-3deg) scale(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --paper: #000;
+    --ink: #f5f5f7;
+    --secondary: #86868b;
+    --glow-inner: rgba(255, 255, 255, 0.105);
+    --glow-middle: rgba(255, 255, 255, 0.035);
+    --glow-outer: rgba(255, 255, 255, 0);
+    --focus: rgba(255, 255, 255, 0.72);
+    --clown-shadow: rgba(255, 255, 255, 0.08);
+    --clown-shadow-hover: rgba(255, 255, 255, 0.12);
+    --suffix-top: #fff;
+    --suffix-middle: #f5f5f7;
+    --suffix-bottom: #aaaab0;
+    --suffix-shadow: rgba(255, 255, 255, 0.06);
+    --hint: rgba(245, 245, 247, 0.42);
+    --hint-hover: rgba(245, 245, 247, 0.68);
+    --tip-foreground: rgba(255, 255, 255, 0.9);
+    --tip-background: rgba(44, 44, 46, 0.8);
+    --tip-border: rgba(255, 255, 255, 0.12);
+    --rule: rgba(255, 255, 255, 0.12);
   }
 }
 
